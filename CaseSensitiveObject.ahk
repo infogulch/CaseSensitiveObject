@@ -24,8 +24,8 @@ class CaseSensitiveObject
     static _HasKey      := CaseSensitiveObject.HasKey
     static _NewEnum     := CaseSensitiveObject.NewEnum
     
-    __new(obj = "") {
-        ObjInsert(this, CaseSensitiveObject.SuperKey, IsObject(obj) ? obj : {})
+    __new(base = "") {
+        ObjInsert(this, CaseSensitiveObject.SuperKey, IsObject(base) ? {base: base} : {})
     }
     
     __get(keys*) {
